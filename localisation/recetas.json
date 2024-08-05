@@ -1,0 +1,39 @@
+{
+    "fr": {
+        "search": "Rechercher...",
+        "previous": "Précédent",
+        "next": "Suivant",
+        "ingredients": "Ingrédients",
+        "recipe":"Recette",
+        "link": "Lien",
+        "addFav": "a été ajouté aux favoris",
+        "delFav": "a été supprimé des favoris",
+        "error": "Oh non ! Une erreur s'est produite",
+        "errorMessage": "Erreur lors de la mise à jour"
+    },
+    "en": {
+        "search": "Search...",
+        "previous": "Previous",
+        "next": "Next",
+        "ingredients": "Ingredients",
+        "recipe":"Recipe",
+        "link": "Link",
+        "addFav": "has been added to favorites",
+        "delFav": "has been removed from favorites",
+        "error": "Uh oh! Something went wrong",
+        "errorMessage": "Error while updating"
+    },
+    "es": {
+        "search": "Buscar...",
+        "previous": "Anterior",
+        "next": "Siguiente",
+        "ingredients": "Ingredientes",
+        "recipe":"Receta",
+        "link": "Enlace",
+        "addFav": "fue añadido a favoritos",
+        "delFav": "fue eliminado de favoritos",
+        "error": "Oh no! Hubo un error",
+        "errorMessage": "Error al actualizar"
+    }
+
+}
