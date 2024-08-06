@@ -49,13 +49,14 @@ export default function SignIn({
 
   const handleMagicLink = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
     setMessage("");
 
     if (!email) {
       setMessage(language.enterMail);
       return;
     }
+
+    setIsLoading(true);
 
     try {
       const { data, error } = await supabase.auth.signInWithOtp({ email });
@@ -70,13 +71,14 @@ export default function SignIn({
 
   const handleOTP = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
     setMessage("");
 
     if (!email) {
       setMessage(language.enterMail);
       return;
     }
+
+    setIsLoading(true);
 
     try {
       const { data, error } = await supabase.auth.signInWithOtp({
@@ -87,6 +89,34 @@ export default function SignIn({
       });
       if (error) throw error;
       setMessage(language.otpSucces);
+    } catch (error: any) {
+      setMessage(`${language.otpFail} : ${error.message}`);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleResetPassword = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setMessage("");
+
+    if (!email) {
+      setMessage(language.fillAll);
+      return;
+    }
+
+    if (!isEmail(email)) {
+      setMessage(language.emailInvalid);
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/reset`
+      });
+      if (error) throw error;
+      setMessage(language.forgotPasswordSuccess);
     } catch (error: any) {
       setMessage(`${language.otpFail} : ${error.message}`);
     } finally {
@@ -115,6 +145,13 @@ export default function SignIn({
           {isLoading ? language.loading : language.signin}
         </Button>
       </form>
+      <Button
+        onClick={handleResetPassword}
+        disabled={isLoading}
+        className="w-full bg-gray-500 hover:bg-gray-600"
+      >
+        {isLoading ? language.loading : language.forgotPassword}
+      </Button>
       <div className="text-center">{language.or}</div>
       <Button onClick={handleMagicLink} disabled={isLoading} className="w-full">
         {isLoading ? language.loading : language.magicLink}

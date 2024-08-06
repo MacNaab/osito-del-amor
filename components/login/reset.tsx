@@ -41,9 +41,7 @@ export default function ResetPasswordForm({
 
       if (error) throw error;
 
-      setMessage(
-        "Mot de passe mis à jour avec succès. Redirection vers la page de connexion..."
-      );
+      setMessage(language.resetPasswordSuccess);
       setTimeout(() => router.push("/login"), 3000); // Rediriger vers la page de connexion après 3 secondes
     } catch (error: any) {
       setMessage(

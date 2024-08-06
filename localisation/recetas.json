@@ -4,7 +4,7 @@
         "previous": "Précédent",
         "next": "Suivant",
         "ingredients": "Ingrédients",
-        "recipe":"Recette",
+        "recipe": "Recette",
         "link": "Lien",
         "addFav": "a été ajouté aux favoris",
         "delFav": "a été supprimé des favoris",
@@ -16,7 +16,7 @@
         "previous": "Previous",
         "next": "Next",
         "ingredients": "Ingredients",
-        "recipe":"Recipe",
+        "recipe": "Recipe",
         "link": "Link",
         "addFav": "has been added to favorites",
         "delFav": "has been removed from favorites",
@@ -28,12 +28,11 @@
         "previous": "Anterior",
         "next": "Siguiente",
         "ingredients": "Ingredientes",
-        "recipe":"Receta",
+        "recipe": "Receta",
         "link": "Enlace",
         "addFav": "fue añadido a favoritos",
         "delFav": "fue eliminado de favoritos",
         "error": "Oh no! Hubo un error",
         "errorMessage": "Error al actualizar"
     }
-
 }

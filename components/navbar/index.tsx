@@ -37,7 +37,12 @@ export default function Navbar() {
   const [user, setUser] = useState<any>(null);
   const paths = usePathname();
   const pathNames = paths.split("/").filter((path) => path);
-  const lang = pathNames.length > 0  && pathNames[0] == "es" || pathNames[0] == "fr" || pathNames[0] == "en" ? pathNames[0] : "en";
+  const lang =
+    (pathNames.length > 0 && pathNames[0] == "es") ||
+    pathNames[0] == "fr" ||
+    pathNames[0] == "en"
+      ? pathNames[0]
+      : "en";
   const router = useRouter();
 
   useEffect(() => {
@@ -62,9 +67,17 @@ export default function Navbar() {
   return (
     <nav className="bg-gray-800 text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <Link href={`/${lang}`} className="text-xl font-bold underline">
-          Osito del Amor
-        </Link>
+        <div className="space-x-4 flex items-center">
+          <Link href={`/${lang}`} className="text-xl font-bold underline">
+            Osito del Amor
+          </Link>
+          {user && (
+            <div className="text-sm italic">
+              {localisation[lang as keyof typeof localisation].welcome}{" "}
+              {user.user_metadata.name}
+            </div>
+          )}
+        </div>
         <div className="space-x-4">
           <Link href={`/${lang}/`} className="hover:text-gray-300">
             {localisation[lang as keyof typeof localisation].recipes}
@@ -94,10 +107,7 @@ export default function Navbar() {
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               {Object.entries(languages).map(([code, name]) => (
-                <DropdownMenuItem
-                  key={nanoid()}
-                  className="cursor-pointer"
-                >
+                <DropdownMenuItem key={nanoid()} className="cursor-pointer">
                   <Link
                     href={
                       pathNames.length > 0

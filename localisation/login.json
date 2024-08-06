@@ -24,7 +24,13 @@
         "signupFail": "Error while signing up",
         "username": "Username",
         "register": "Register",
-        "emailInvalid": "Please enter a valid email"
+        "emailInvalid": "Please enter a valid email",
+        "fillAll": "Please fill in all fields",
+        "welcome": "Welcome",
+        "passwordNotMatch": "Passwords are not the same",
+        "forgotPassword": "Forgot your password?",
+        "forgotPasswordSuccess": "Check your email to change your password.",
+        "resetPasswordSuccess":"Password updated successfully. Redirecting to login page..."
     },
     "fr": {
         "login": "Connexion",
@@ -51,7 +57,13 @@
         "signupFail": "Erreur lors de l'inscription",
         "username": "Nom d'utilisateur",
         "register": "S'inscrire",
-        "emailInvalid": "Veuillez entrer une adresse email valide"
+        "emailInvalid": "Veuillez entrer une adresse email valide",
+        "fillAll": "Veuillez remplir tous les champs",
+        "welcome": "Bienvenue",
+        "passwordNotMatch":"Les mots de passe ne sont pas identiques",
+        "forgotPassword":"Mot de passe oublié ?",
+        "forgotPasswordSuccess": "Vérifiez votre email pour changer votre mot de passe.",
+        "resetPasswordSuccess":"Mot de passe mis à jour avec succès. Redirection vers la page de connexion..."
     },
     "es": {
         "login": "Iniciar sesión",
@@ -78,6 +90,12 @@
         "signupFail": "Error al inscribirse",
         "username": "Nombre de usuario",
         "register": "Registrarse",
-        "emailInvalid": "Por favor, ingrese un correo electronico valido"
+        "emailInvalid": "Por favor, ingrese un correo electronico valido",
+        "fillAll": "Por favor, rellene todos los campos",
+        "welcome": "Bienvenido",
+        "passwordNotMatch":"Las contrasenias no son iguales",
+        "forgotPassword":"Olvidaste tu contrasenya ?",
+        "forgotPasswordSuccess": "Verifique su correo electronico para cambiar su contrasenya.",
+        "resetPasswordSuccess":"Contraseña actualizada correctamente. Redireccionando a la página de inicio..."
     }
 }

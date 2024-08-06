@@ -63,6 +63,7 @@ export default function Index({ lang, data }: { lang: string, data: any }) {
   }, [checked, data, search]);
   return (
     <div>
+      <div className="mt-4 text-sm text-center">{`Total: ${filteredData.length} ${language.recipe}${filteredData.length > 1 ? "s" : ""}`}</div>
       <div className="my-6">
         <input
           className="mx-auto block w-1/3 appearance-none rounded border border-gray-200 bg-gray-200 px-4 py-3 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"

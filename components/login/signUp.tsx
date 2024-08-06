@@ -14,6 +14,7 @@ export default function SignUp({
 }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [name, setName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -23,6 +24,11 @@ export default function SignUp({
     e.preventDefault();
     setMessage("");
 
+    if (!email || !password || !name) {
+      setMessage(language.fillAll);
+      return;
+    }
+
     if (!isEmail(email)) {
       setMessage(language.emailInvalid);
       return;
@@ -30,6 +36,11 @@ export default function SignUp({
 
     if (password.length < 6) {
       setMessage(language.passwordMin);
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setMessage(language.passwordNotMatch);
       return;
     }
 
@@ -74,6 +85,13 @@ export default function SignUp({
         placeholder={language.password}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        required
+      />
+      <Input
+        type="password"
+        placeholder={language.password}
+        value={confirmPassword}
+        onChange={(e) => setConfirmPassword(e.target.value)}
         required
       />
       <Input
