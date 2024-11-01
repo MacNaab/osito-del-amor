@@ -1,4 +1,4 @@
-import { useSheetData } from "@/hooks/useSheetData";
+import data from "@/data/data.json";
 import NewIndex from "./newIndex";
 
 export default function Index({
@@ -8,10 +8,13 @@ export default function Index({
   lang: string;
   userData: any;
 }) {
-  const { data } = useSheetData();
+  const localData = userData.fav.map((v: any) => ({
+    id: v,
+    ...data[v]
+  }));
   return (
     <div>
-      <NewIndex lang={lang} data={data} />
+      <NewIndex lang={lang} data={localData} />
     </div>
   );
 }

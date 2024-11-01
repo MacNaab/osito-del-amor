@@ -24,10 +24,3 @@ export function isEmail(email: string): boolean {
   const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
   return emailRegex.test(email);
 }
-
-export interface SheetRow {
-  id: number;
-  Difficile?: number;
-  Type?: string[];
-  [key: string]: any;
-}

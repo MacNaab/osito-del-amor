@@ -1,13 +1,17 @@
 "use client";
-import data from "@/data/data.json";
+import { useSheetData } from "@/hooks/useSheetData";
 import NewIndex from "@/components/recetas/newIndex";
-
-const localData = data.map((value, number: number) => ({
-  id: number,
-  ...value
-}));
+import LoadingSpinner from "@/components/loading";
 
 export default function Page() {
-  // Utilisez 'lang' pour localiser le contenu de votre page
-  return <NewIndex lang="en" data={localData} />;
+  const { data } = useSheetData();
+  return (
+    <div>
+      {data.length > 0 ? (
+        <NewIndex lang="en" data={data} />
+      ) : (
+        <LoadingSpinner lang="en" />
+      )}
+    </div>
+  );
 }

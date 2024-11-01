@@ -21,8 +21,6 @@ export default function Card({
     return <InstagramEmbedWrapper url={data.Lien} />;
   }, [data.Lien]);
 
-  console.log("Card data = ",data);
-
   return (
     <div className="flex cursor-pointer flex-col overflow-hidden">
       <div onClick={() => router.push(href)} className="flex flex-1 flex-col justify-between">
